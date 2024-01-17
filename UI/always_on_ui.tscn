@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://heykrhxsmhj8"]
+
+[ext_resource type="Script" path="res://UI/toggle_store.gd" id="1_kje77"]
+[ext_resource type="Script" path="res://UI/toggle_pause.gd" id="2_82vck"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0b0j3"]
+size = Vector2(32, 32)
+
+[node name="AlwaysOnUi" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="toggle_pause" type="Button" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+toggle_mode = true
+icon = SubResource("PlaceholderTexture2D_0b0j3")
+script = ExtResource("2_82vck")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="toggle_store" type="Button" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+toggle_mode = true
+icon = SubResource("PlaceholderTexture2D_0b0j3")
+script = ExtResource("1_kje77")
+
+[connection signal="toggled" from="CanvasLayer/GridContainer/toggle_pause" to="CanvasLayer/GridContainer/toggle_pause" method="_on_toggled"]
+[connection signal="toggled" from="CanvasLayer/GridContainer/toggle_store" to="CanvasLayer/GridContainer/toggle_store" method="_on_toggled"]

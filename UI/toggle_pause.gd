@@ -1,6 +1,6 @@
 extends Button
-var store_menu = load("res://store_menu/store_menu.tscn")
-var store_menu_instance = store_menu.instantiate()
+var pause_menu = load("res://UI/pause_menu/pause_menu.tscn")
+var pause_menu_instance = pause_menu.instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_toggled(toggled_on: bool) -> void:
 	if (toggled_on == true):
-		add_child(store_menu_instance)
+		add_child(pause_menu_instance)
 	else:
-		store_menu_instance.free()
-		store_menu_instance = store_menu.instantiate()
+		pause_menu_instance.free()
+		pause_menu_instance = pause_menu.instantiate()
