@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://crwyqsk5hy3rv" path="res://camera/camera.tscn" id="3_g6fbm"]
 [ext_resource type="PackedScene" uid="uid://heykrhxsmhj8" path="res://UI/always_on_ui.tscn" id="3_lcjnx"]
 
-[node name="Main" type="Node2D"]
+[node name="MainGameplay" type="Node2D"]
 
 [node name="Terrain" parent="." instance=ExtResource("1_1p2l6")]
 
